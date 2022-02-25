@@ -84,7 +84,14 @@
 </body>
 <script>
     $(function () {
-        fetchDetails()
+        if (localStorage.getItem('task-data') == null) {
+            window.location = 'index.html'
+        }
+        else {
+            fetchDetails()
+        }
+
+
     })
 
     let stored = localStorage.getItem('task-data')
